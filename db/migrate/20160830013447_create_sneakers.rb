@@ -1,7 +1,7 @@
 class CreateSneakers < ActiveRecord::Migration[5.0]
   def change
     create_table :sneakers do |t|
-      t.string :brand
+      t.string :name
       t.string :model
       t.string :image
       t.string :description
