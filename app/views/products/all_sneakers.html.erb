@@ -1,0 +1,10 @@
+<% @sneakers.each do |sneaker| %>
+
+<h2><%= sneaker.make %> <%= sneaker.model %></h2>
+<img src="<%= sneaker.image %>" alt="<%= sneaker.model %>"style="width:304px;height:228px;">
+
+<h3>Description:  <%= sneaker.description %></h3>
+
+<h4>Price:  <%= sneaker.price %></h4>
+
+<% end %>

@@ -1,9 +1,9 @@
 class ProductsController < ApplicationController
   def one_sneaker
-    @sneaker = Sneakers.find(1)
+    @sneaker = Sneaker.find(2)
   end
 
   def all_sneakers
-    @sneakers = Sneakers.all
+    @sneakers = Sneaker.all
   end
 end

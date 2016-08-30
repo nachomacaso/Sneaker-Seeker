@@ -1,2 +1,6 @@
-<h1>This is the first item: </h1>
+<h1><%= @sneaker.make %> <%= @sneaker.model %></h1>
+<img src="<%= @sneaker.image %>" alt="<%= @sneaker.model %>"style="width:304px;height:228px;">
 
+<h3>Description:  <%= @sneaker.description %></h3>
+
+<h4>Price:  <%= @sneaker.price %></h4> 
