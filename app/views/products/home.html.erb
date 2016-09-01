@@ -59,8 +59,8 @@
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div class="container">
-    <h2>your source for ridiculously expensive sneakers</h2>
     <img src="http://theshoegame.com/wp-content/uploads/2011/02/nike-sneaker-boxes.jpg" alt="<%= @sneaker.model %>"style="width:304px;height:228px;">
+    <h3>Sneaker Seeker: your source for ridiculously expensive sneakers</h3>
     </div>
   </div>
 
@@ -72,7 +72,7 @@
         <img src="<%= @sneaker.image %>" alt="<%= @sneaker.model %>"style="width:304px;height:228px;">
         <h4>Price:  $<%= @sneaker.price %></h4> 
         <p>Description:  <%= @sneaker.description %></p>
-        <p><a class="btn btn-default" href="#one_sneaker" role="button">View details &raquo;</a></p>
+        <p><a class="btn btn-default" href="/single_product" role="button">View details &raquo;</a></p>
       </div>
       <div class="col-md-4">
         <h2>Heading</h2>
@@ -89,7 +89,7 @@
     <hr>
 
     <footer>
-      <p>&copy; 2016 Company, Inc.</p>
+      <p>&copy; 2016 Sneaker Seeker, Inc.</p>
     </footer>
   </div> <!-- /container -->
 

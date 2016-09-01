@@ -7,7 +7,7 @@
   <meta name="author" content="">
   <link rel="icon" href="../../favicon.ico">
 
-  <title>Sneaker Seeker</title>
+  <title>Jumbotron Template for Bootstrap</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -59,44 +59,16 @@
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div class="container">
-      <h1><%= @sneaker.make %> <%= @sneaker.model %></h1>
-        <img src="<%= @sneaker.image %>" alt="<%= @sneaker.model %>"style="width:304px;height:228px;">
-        <h3>Price:  $<%= @sneaker.price %></h3> 
-        <p>Description:  <%= @sneaker.description %></p>
-        <p><a class="btn btn-default" href="#one_sneaker" role="button">View details &raquo;</a></p>
+    <h1>Newly posted item</h1>
+    <% @sneaker.image %>
+    <h2>Brand: <%= @sneaker.make %></h2>
+    <h2>Model: <%= @sneaker.model %></h2>
+    <h3>Description: <%= sneaker.description %></h3>
+    <h3>Price: <%= sneaker.price %></h3>
     </div>
   </div>
-
-  <div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-      <div class="col-md-4">
-        <h2><%= @sneaker.make %> <%= @sneaker.model %></h2>
-        <img src="<%= @sneaker.image %>" alt="<%= @sneaker.model %>"style="width:304px;height:228px;">
-        <h4>Price:  $<%= @sneaker.price %></h4> 
-        <p>Description:  <%= @sneaker.description %></p>
-        <p><a class="btn btn-default" href="#one_sneaker" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2><%= @sneaker.make %> <%= @sneaker.model %></h2>
-        <img src="<%= @sneaker.image %>" alt="<%= @sneaker.model %>"style="width:304px;height:228px;">
-        <h4>Price:  $<%= @sneaker.price %></h4> 
-        <p>Description:  <%= @sneaker.description %></p>
-        <p><a class="btn btn-default" href="#one_sneaker" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2><%= @sneaker.make %> <%= @sneaker.model %></h2>
-        <img src="<%= @sneaker.image %>" alt="<%= @sneaker.model %>"style="width:304px;height:228px;">
-        <h4>Price:  $<%= @sneaker.price %></h4> 
-        <p>Description:  <%= @sneaker.description %></p>
-        <p><a class="btn btn-default" href="#one_sneaker" role="button">View details &raquo;</a></p>
-      </div>
-    </div>
-
-    <hr>
-
     <footer>
-      <p>&copy; 2016 Company, Inc.</p>
+      <p>&copy; 2016 Sneaker Seeker, Inc.</p>
     </footer>
   </div> <!-- /container -->
 

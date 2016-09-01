@@ -1,0 +1,28 @@
+<h1>Sell your sneakers here.</h1>
+
+
+<%= form_tag 'display_form', method: :post do %>
+  <div>
+    <%= label_tag :product_make, 'Brand: ' %>
+    <%= text_field_tag :product_make, nil %>
+  </div>
+  <div>
+    <%= label_tag :product_model, 'Item name: ' %>
+    <%= text_field_tag :product_model, nil %>
+  </div>
+  <div>
+    <%= label_tag :product_image, 'Image URL: ' %>
+    <%= text_field_tag :product_image, nil %>
+  </div>
+  <div>
+    <%= label_tag :product_description, 'Description: ' %>
+    <%= text_field_tag :product_description, nil %>
+  </div>
+  <div>
+    <%= label_tag :product_price, 'Price: ' %>
+    <%= text_field_tag :product_price, nil %>
+  </div>
+  <div>
+    <%= submit_tag 'Add New Item' %>
+  </div>
+<% end %>
