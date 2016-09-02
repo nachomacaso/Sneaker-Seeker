@@ -1,0 +1,37 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Enter a new sneaker: </h3>
+        <%= form_tag '/sneakers', method: :post do %>
+          <div>
+            <%= label_tag :make, 'Brand: ' %>
+            <%= text_field_tag :make, nil %>
+          </div>
+          <div>
+            <%= label_tag :model, 'Item name: ' %>
+            <%= text_field_tag :model, nil %>
+          </div>
+          <div>
+            <%= label_tag :image, 'Image URL: ' %>
+            <%= text_field_tag :image, nil %>
+          </div>
+          <div>
+            <%= label_tag :description, 'Description: ' %>
+            <%= text_field_tag :description, nil %>
+          </div>
+          <div>
+            <%= label_tag :price, 'Price: ' %>
+            <%= text_field_tag :price, nil %>
+          </div>
+          <div>
+            <p><a class="btn btn-default" href="#cart" role="button">Add New Item &raquo;</a></p>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-6">
+        <img id="home_image" src="http://theshoegame.com/wp-content/uploads/2011/02/nike-sneaker-boxes.jpg" alt="Sneaker Seeker">
+      </div>
+    </div>
+  </div>
+</div> 

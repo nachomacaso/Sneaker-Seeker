@@ -1,20 +1,37 @@
 class ProductsController < ApplicationController
-  def home
-    @sneaker = Sneaker.find(1)
-  end
-  def one_sneaker
-    @sneaker = Sneaker.find(1)
-  end
-
-  def all_sneakers
+  def index
     @sneakers = Sneaker.all
   end
 
-  def sneaker_form
+  def new
 
   end
 
-  def display_sneaker_form
-    @sneaker = Sneaker.new(make: params[:product_make], model: params[:product_model], image: params[:product_image], description: [:product_description], price: params[:product_price])
+  def create
+    @sneaker = Sneaker.create(make: params[:make],
+                              model: params[:model],
+                              image: params[:image],
+                              description: params[:description],
+                              price: params[:price])
+
+    render 'show.html.erb'
+  end
+
+  def show
+    @sneaker = Sneaker.find(params[:id])
+  end
+
+  def edit
+    @sneaker = Sneaker.find(params[:id])
+  end
+
+  def update
+    @sneaker = Sneaker.find(params[:id])
+    @sneaker.update(make: params[:make],
+                    model: params[:model],
+                    image: params[:image],
+                    description: params[:description],
+                    price: params[:price])
+    render 'show.html.erb'
   end
 end

@@ -1,0 +1,44 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1><%= @sneaker.make %> <%= @sneaker.model %></h1>
+    <a href="/sneakers/<%= @sneaker.id %>">
+    <img src="<%= @sneaker.image %>" alt="<%= @sneaker.model %>">
+    </a>
+    <h3>Price:  $<%= @sneaker.price %></h3> 
+    <p>Description:  <%= @sneaker.description %></p>
+    <p><a class="btn btn-default" href="#cart" role="button">Add To Cart &raquo;</a></p>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-4">
+        <h2><%= @sneaker.make %> <%= @sneaker.model %></h2>
+        <a href="/sneakers/<%= @sneaker.id  %>">
+        <img src="<%= @sneaker.image %>" alt="<%= @sneaker.model %>"style="width:304px;height:228px;">
+        </a>
+        <h4>Price:  $<%= @sneaker.price %></h4> 
+        <p>Description:  <%= @sneaker.description %></p>
+        <p><a class="btn btn-default" href="/sneakers/<%= @sneaker.id  %>" role="button">View details &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2><%= @sneaker.make %> <%= @sneaker.model %></h2>
+        <a href="/sneakers/<%= @sneaker.id %>">
+        <img src="<%= @sneaker.image %>" alt="<%= @sneaker.model %>"style="width:304px;height:228px;">
+        </a>
+        <h4>Price:  $<%= @sneaker.price %></h4> 
+        <p>Description:  <%= @sneaker.description %></p>
+        <p><a class="btn btn-default" href="/sneakers/<%= @sneaker.id  %><%= @sneaker.id  %>" role="button">View details &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2><%= @sneaker.make %> <%= @sneaker.model %></h2>
+        <a href="/sneakers/<%= @sneaker.id %>">
+        <img src="<%= @sneaker.image %>" alt="<%= @sneaker.model %>"style="width:304px;height:228px;">
+        </a>
+        <h4>Price:  $<%= @sneaker.price %></h4> 
+        <p>Description:  <%= @sneaker.description %></p>
+        <p><a class="btn btn-default" href="/sneakers/<%= @sneaker.id  %>" role="button">View details &raquo;</a></p>
+      </div>
+    </div>
+  </div>
+</div> 

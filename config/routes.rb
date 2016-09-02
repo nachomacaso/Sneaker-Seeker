@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  get '/' => 'products#home'
-  get '/single_product' => 'products#one_sneaker'
-  get '/all_products' => 'products#all_sneakers'
-  get '/product_form' => 'products#sneaker_form'
-  post '/display_form' => 'products#display_sneaker_form'
+  get '/' => 'products#index'
+  get '/sneakers' => 'products#index'
+
+  get '/sneakers/new' => 'products#new'
+  post '/sneakers' => 'products#create'
+
+  get '/sneakers/:id' => 'products#show'
+
+  get '/sneakers/:id/edit' => 'products#edit'
+  patch '/sneakers/:id' => 'products#update'
 end
