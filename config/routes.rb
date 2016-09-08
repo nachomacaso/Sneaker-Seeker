@@ -9,4 +9,7 @@ Rails.application.routes.draw do
 
   get '/sneakers/:id/edit' => 'products#edit'
   patch '/sneakers/:id' => 'products#update'
+
+  delete '/sneakers/:id' => 'products#destroy'
+  
 end

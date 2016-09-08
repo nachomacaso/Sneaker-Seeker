@@ -1,30 +1,28 @@
-<div class="jumbotron">
-  <div class="container">
-    <h3>Edit a sneaker: </h3>
-    <%= form_tag "/sneakers/#{ @sneaker.id }", method: :patch do %>
-    <div>
-      <%= label_tag :make, 'Brand: ' %>
-      <%= text_field_tag :make, @sneaker.make %>
-    </div>
-    <div>
-      <%= label_tag :model, 'Item name: ' %>
-      <%= text_field_tag :model, @sneaker.model %>
-    </div>
-    <div>
-      <%= label_tag :image, 'Image URL: ' %>
-      <%= text_field_tag :image, @sneaker.image %>
-    </div>
-    <div>
-      <%= label_tag :description, 'Description: ' %>
-      <%= text_field_tag :description, @sneaker.description %>
-    </div>
-    <div>
-      <%= label_tag :price, 'Price: ' %>
-      <%= text_field_tag :price, @sneaker.price %>
-    </div>
-    <div>
-      <p><a class="btn btn-default" href="/sneakers/<%= @sneaker.id %>" role="button">Edit Item &raquo;</a></p>
-    </div>
-    <% end %>
+<div class="container">
+  <h3>Edit a sneaker: </h3>
+  <%= form_tag "/sneakers/#{ @sneaker.id }", method: :patch do %>
+  <div>
+    <%= label_tag :make, 'Brand: ' %>
+    <%= text_field_tag :make, @sneaker.make %>
   </div>
+  <div>
+    <%= label_tag :model, 'Item name: ' %>
+    <%= text_field_tag :model, @sneaker.model %>
+  </div>
+  <div>
+    <%= label_tag :image, 'Image URL: ' %>
+    <%= text_field_tag :image, @sneaker.image %>
+  </div>
+  <div>
+    <%= label_tag :description, 'Description: ' %>
+    <%= text_field_tag :description, @sneaker.description %>
+  </div>
+  <div>
+    <%= label_tag :price, 'Price: ' %>
+    <%= text_field_tag :price, @sneaker.price %>
+  </div>
+  <div>
+    <%= submit_tag "Edit Item" %>
+  </div>
+  <% end %>
 </div>

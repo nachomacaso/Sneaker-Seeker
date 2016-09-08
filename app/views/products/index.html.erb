@@ -1,14 +1,21 @@
-<div class="jumbotron">
-  <div class="container">
-    <% @sneakers.each do |sneaker| %>
-    <h2><%= sneaker.make %> <%= sneaker.model %></h2>
-    <a href="/sneakers/<%= sneaker.id %>">
-    <img src="<%= sneaker.image %>" alt="<%= sneaker.model %>">
-    </a>
-    <h3>Description:  <%= sneaker.description %></h3>
-    <h4>Price:  $<%= sneaker.price %></h4>
-    <p><a class="btn btn-default" href="/sneakers/<%= sneaker.id %>" role="button">View Details &raquo;</a></p>
-    <% end %>
+<div class="container">
+
+  <% @sneakers.each_slice(3) do |sneaker_row| %>
+    <div class="row">
+      <% sneaker_row.each do |sneaker| %>
+        <div class="col-md-4">
+          <div class="well thumbnail index-list">
+            <h2><%= sneaker.make %> <%= sneaker.model %></h2>
+            <a href="/sneakers/<%= sneaker.id %>">
+              <img src="<%= sneaker.image %>" alt="<%= sneaker.model %>">
+            </a>
+            <h3>Description:  <%= sneaker.description %></h3>
+            <h4>Price:  $<%= sneaker.price %></h4>
+            <p><a class="btn btn-default" href="/sneakers/<%= sneaker.id %>" role="button">View Details &raquo;</a></p>
+          </div>
+        </div>
+      <% end %>
     </div>
-  </div>
+  <% end %>
+
 </div>

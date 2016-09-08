@@ -14,7 +14,8 @@ class ProductsController < ApplicationController
                               description: params[:description],
                               price: params[:price])
 
-    render 'show.html.erb'
+    flash[:success] = "New Item Sucessfully Created"
+    redirect_to "/sneakers/#{@sneaker.id}"
   end
 
   def show
@@ -32,6 +33,16 @@ class ProductsController < ApplicationController
                     image: params[:image],
                     description: params[:description],
                     price: params[:price])
-    render 'show.html.erb'
+
+    flash[:warning] = "Item Has Been Updated"
+    redirect_to "/sneakers/#{@sneaker.id}"
+  end
+
+  def destroy
+    @sneaker = Sneaker.find(params[:id])
+    @sneaker.destroy
+
+    flash[:danger] = "Item Has Been Deleted!"
+    redirect_to "/sneakers"
   end
 end
