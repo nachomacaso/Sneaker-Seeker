@@ -1,9 +1,18 @@
 <div class="container">
   <h1><%= @sneaker.make %> <%= @sneaker.model %></h1>
+
+  <% if @sneaker.discounted? %>
+    <h4>Discount Item!</h4>
+  <% else %>
+    <h4>On Sale!</h4>
+  <% end %>
+
   <a href="/sneakers/<%= @sneaker.id %>">
   <img src="<%= @sneaker.image %>" alt="<%= @sneaker.model %>">
   </a>
-  <h3>Price:  $<%= @sneaker.price %></h3> 
+  <h4 class="<%= "discount-price" if @sneaker.discounted? %>">Price: <%= number_to_currency(@sneaker.price) %></h3>
+  <h4>Tax: <%= number_to_currency(@sneaker.tax) %></h4> 
+  <h3>Total: <%= number_to_currency(@sneaker.total) %></h3> 
   <p>Description:  <%= @sneaker.description %></p>
   <p><a class="btn btn-default" href="#cart" role="button">Add To Cart &raquo;</a></p>
   <p><a class="btn btn-default" href="/sneakers/<%= @sneaker.id %>/edit" role="button">Edit &raquo;</a></p>
