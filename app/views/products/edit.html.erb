@@ -22,6 +22,10 @@
     <%= text_field_tag :price, @sneaker.price %>
   </div>
   <div>
+    <%= label_tag :sneaker_in_stock?, 'In Stock: ' %>
+    <%= text_field_tag :sneaker_in_stock?, @sneaker_in_stock %>
+  </div>
+  <div>
     <%= submit_tag "Edit Item" %>
   </div>
   <% end %>

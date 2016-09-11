@@ -19,4 +19,12 @@ class Sneaker < ApplicationRecord
   def total
     price.to_f + tax
   end
+
+  def in_stock?
+    if sneaker_in_stock?
+      message = "In Stock"
+    else
+      message = "Sold Out"
+    end
+  end
 end

@@ -10,7 +10,7 @@
               <img src="<%= sneaker.image %>" alt="<%= sneaker.model %>">
             </a>
             <h3>Description:  <%= sneaker.description %></h3>
-            <h4>Price:  $<%= sneaker.price %></h4>
+            <h4>Price:  <%= number_to_currency(sneaker.price) %></h4>
             <p><a class="btn btn-default" href="/sneakers/<%= sneaker.id %>" role="button">View Details &raquo;</a></p>
           </div>
         </div>

@@ -14,6 +14,7 @@
   <h4>Tax: <%= number_to_currency(@sneaker.tax) %></h4> 
   <h3>Total: <%= number_to_currency(@sneaker.total) %></h3> 
   <p>Description:  <%= @sneaker.description %></p>
+  <p><%=@sneaker.in_stock? %></p>
   <p><a class="btn btn-default" href="#cart" role="button">Add To Cart &raquo;</a></p>
   <p><a class="btn btn-default" href="/sneakers/<%= @sneaker.id %>/edit" role="button">Edit &raquo;</a></p>
   <p><%= link_to 'Delete', "/sneakers/#{@sneaker.id}", method: :delete %></p>
