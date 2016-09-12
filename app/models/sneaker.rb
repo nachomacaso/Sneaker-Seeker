@@ -9,7 +9,7 @@ class Sneaker < ApplicationRecord
   # end
 
   def discounted?
-    price.to_f < 1000
+    price.to_f < 800
   end
 
   def tax

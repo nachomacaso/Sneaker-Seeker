@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get '/' => 'products#index'
   get '/sneakers' => 'products#index'
+  
+  get '/sneakers/random' => 'products#random'
 
   get '/sneakers/new' => 'products#new'
   post '/sneakers' => 'products#create'
