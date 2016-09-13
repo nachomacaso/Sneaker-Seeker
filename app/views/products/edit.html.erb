@@ -26,7 +26,12 @@
     <%= text_field_tag :sneaker_in_stock?, @sneaker_in_stock %>
   </div>
   <div>
-    <%= submit_tag "Edit Item" %>
+    <%= label_tag :supplier_id, 'Supplier ID: ' %>
+    <%= text_field_tag :supplier_id, @supplier_id %>
+  </div>
+  <br>
+  <div>
+    <%= submit_tag "Edit Item", class:"btn btn-default" %>
   </div>
   <% end %>
 </div>

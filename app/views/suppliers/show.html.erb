@@ -1,0 +1,7 @@
+<div class="container">
+  <h1><%= @supplier.name %></h1>
+  <h4>Email: <%= @supplier.email %></h4>
+  <h4>Phone: <%= @supplier.phone %></h4> 
+  <p><a class="btn btn-default" href="/suppliers/<%= @supplier.id %>/edit" role="button">Edit</a></p>
+  <p><%= link_to 'Delete', "/suppliers/#{@supplier.id}", method: :delete, class:"btn btn-default" %></p>
+</div>

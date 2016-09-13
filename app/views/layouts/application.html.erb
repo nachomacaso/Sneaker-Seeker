@@ -64,7 +64,6 @@
       </div>
     </nav>
 
-    <body class="container">
     <% flash.each do |name, message| %>
       <div>
         <div class="alert alert-<%=name %> alert-dismissible" role="alert">
@@ -74,7 +73,7 @@
     <% end %>
 
     <%= yield %>
-    </body>
+    
     <footer class="footer">
       <div class="footer">
         <p>&copy; 2016 Sneaker Seeker, Inc.</p>

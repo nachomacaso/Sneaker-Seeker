@@ -1,0 +1,20 @@
+<div class="container">
+
+  <% @suppliers.each_slice(3) do |supplier_row| %>
+    <div class="row">
+      <% supplier_row.each do |supplier| %>
+        <div class="col-md-4">
+          <div class="well thumbnail index-list">
+            <a href="/suppliers/<%= supplier.id %>">
+            <h2><%= supplier.name %></h2>
+            </a>
+            <h3>Email:  <%= supplier.email %></h3>
+            <h4>Phone:  <%= supplier.phone %></h4>
+            <p><a class="btn btn-default" href="/suppliers/<%= supplier.id %>" role="button">View Details &raquo;</a></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+</div>

@@ -31,7 +31,9 @@ class ProductsController < ApplicationController
                               model: params[:model],
                               image: params[:image],
                               description: params[:description],
-                              price: params[:price])
+                              price: params[:price],
+                              sneaker_in_stock?: params[:sneaker_in_stock?], 
+                              supplier_id: params[:supplier_id])
 
     flash[:success] = "New Item Sucessfully Created"
     redirect_to "/sneakers/#{@sneaker.id}"
@@ -39,6 +41,7 @@ class ProductsController < ApplicationController
 
   def show
     @sneaker = Sneaker.find(params[:id])
+    # @supplier = @sneakers.supplier.name
   end
 
   def edit
@@ -52,7 +55,8 @@ class ProductsController < ApplicationController
                     image: params[:image],
                     description: params[:description],
                     price: params[:price],
-                    sneaker_in_stock?: params[:sneaker_in_stock?])
+                    sneaker_in_stock?: params[:sneaker_in_stock?],
+                    supplier_id: params[:supplier_id])
 
     flash[:warning] = "Item Has Been Updated"
     redirect_to "/sneakers/#{@sneaker.id}"

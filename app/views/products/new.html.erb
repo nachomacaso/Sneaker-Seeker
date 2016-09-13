@@ -24,7 +24,12 @@
           <%= text_field_tag :price, nil %>
         </div>
         <div>
-          <%= submit_tag "Sell Sneakers" %>
+          <%= label_tag :supplier_id, 'Supplier Id: ' %>
+          <%= text_field_tag :supplier_id, nil %>
+        </div>
+        <br>
+        <div>
+          <%= submit_tag "Sell Sneakers", class:"btn btn-default" %>
         </div>
       <% end %>
     </div>

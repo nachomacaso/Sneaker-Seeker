@@ -8,14 +8,15 @@
   <% end %>
 
   <a href="/sneakers/<%= @sneaker.id %>">
-  <img src="<%= @sneaker.image %>" alt="<%= @sneaker.model %>">
+  <img src="<%= @sneaker.images.first.url %>" alt="<%= @sneaker.model %>">
   </a>
   <h4>Price: <%= number_to_currency(@sneaker.price) %></h4>
   <h4>Tax: <%= number_to_currency(@sneaker.tax) %></h4> 
   <h3 class="<%= "discount-price" if @sneaker.discounted? %>">Total: <%= number_to_currency(@sneaker.total) %></h3> 
   <p>Description:  <%= @sneaker.description %></p>
-  <p><%= @sneaker.in_stock? %></p>
-  <p><a class="btn btn-default" href="#cart" role="button">Add To Cart &raquo;</a></p>
-  <p><a class="btn btn-default" href="/sneakers/<%= @sneaker.id %>/edit" role="button">Edit &raquo;</a></p>
-  <p><%= link_to 'Delete', "/sneakers/#{@sneaker.id}", method: :delete %></p>
+  <p><%= @sneaker.in_stock %></p>
+  <p><a class="btn btn-default" href="#cart" role="button">Add To Cart</a></p>
+  <p><a class="btn btn-default" href="/sneakers/<%= @sneaker.id %>/edit" role="button">Edit</a></p>
+  <p><%= link_to 'Delete', "/sneakers/#{@sneaker.id}", method: :delete, class:"btn btn-default" %></p>
+  <p>Supplied By: <%= @sneaker.supplier.name %></p>
 </div>

@@ -7,7 +7,7 @@
           <div class="well thumbnail index-list">
             <h2><%= sneaker.make %> <%= sneaker.model %></h2>
             <a href="/sneakers/<%= sneaker.id %>">
-              <img src="<%= sneaker.image %>" alt="<%= sneaker.model %>">
+              <img src="<%= sneaker.images.first.url %>" alt="<%= sneaker.model %>">
             </a>
             <h3>Description:  <%= sneaker.description %></h3>
             <h4>Price:  <%= number_to_currency(sneaker.price) %></h4>

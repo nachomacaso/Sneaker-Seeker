@@ -1,4 +1,7 @@
 class Sneaker < ApplicationRecord
+  belongs_to :supplier
+  has_many :images
+  
   # def sale_message
   #   if price.to_f < 1000
   #     message = "Discounted Item!"
@@ -20,7 +23,7 @@ class Sneaker < ApplicationRecord
     price.to_f + tax
   end
 
-  def in_stock?
+  def in_stock
     if sneaker_in_stock?
       message = "In Stock"
     else
