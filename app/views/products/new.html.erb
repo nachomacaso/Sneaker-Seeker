@@ -16,6 +16,14 @@
           <%= text_field_tag :image, nil %>
         </div>
         <div>
+          <%= label_tag :image_2, "Add'l Image URL: " %>
+          <%= text_field_tag :image_2, nil %>
+        </div>
+        <div>
+          <%= label_tag :image_3, "Add'l Image URL: " %>
+          <%= text_field_tag :image_3, nil %>
+        </div>
+        <div>
           <%= label_tag :description, 'Description: ' %>
           <%= text_field_tag :description, nil %>
         </div>
@@ -24,8 +32,8 @@
           <%= text_field_tag :price, nil %>
         </div>
         <div>
-          <%= label_tag :supplier_id, 'Supplier Id: ' %>
-          <%= text_field_tag :supplier_id, nil %>
+          <%= label_tag :supplier_id, 'Supplier: ' %>
+          <%= collection_select :supplier, :supplier_id, Supplier.all, :id, :name %>
         </div>
         <br>
         <div>

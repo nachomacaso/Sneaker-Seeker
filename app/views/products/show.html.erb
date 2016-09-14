@@ -6,10 +6,9 @@
   <% else %>
     <h4>On Sale!</h4>
   <% end %>
-
-  <a href="/sneakers/<%= @sneaker.id %>">
-  <img src="<%= @sneaker.images.first.url %>" alt="<%= @sneaker.model %>">
-  </a>
+  <% @sneaker.images.each do |image_object| %>
+    <img src="<%= image_object.url %>" alt="<%= @sneaker.model %>">
+  <% end %>
   <h4>Price: <%= number_to_currency(@sneaker.price) %></h4>
   <h4>Tax: <%= number_to_currency(@sneaker.tax) %></h4> 
   <h3 class="<%= "discount-price" if @sneaker.discounted? %>">Total: <%= number_to_currency(@sneaker.total) %></h3> 

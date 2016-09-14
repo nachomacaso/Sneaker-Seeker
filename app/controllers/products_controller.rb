@@ -29,11 +29,12 @@ class ProductsController < ApplicationController
   def create
     @sneaker = Sneaker.create(make: params[:make],
                               model: params[:model],
-                              image: params[:image],
                               description: params[:description],
                               price: params[:price],
-                              sneaker_in_stock?: params[:sneaker_in_stock?], 
-                              supplier_id: params[:supplier_id])
+                              sneaker_in_stock: params[:sneaker_in_stock], 
+                              supplier_id: params[:supplier][:supplier_id])
+
+    Image.create(url: params[:image], sneaker_id: @sneaker.id) if params[:image]
 
     flash[:success] = "New Item Sucessfully Created"
     redirect_to "/sneakers/#{@sneaker.id}"
@@ -55,7 +56,7 @@ class ProductsController < ApplicationController
                     image: params[:image],
                     description: params[:description],
                     price: params[:price],
-                    sneaker_in_stock?: params[:sneaker_in_stock?],
+                    sneaker_in_stock: params[:sneaker_in_stock],
                     supplier_id: params[:supplier_id])
 
     flash[:warning] = "Item Has Been Updated"

@@ -11,7 +11,7 @@
   </div>
   <div>
     <%= label_tag :image, 'Image URL: ' %>
-    <%= text_field_tag :image, @sneaker.image %>
+    <%= text_field_tag :image, @sneaker.images.first.url %>
   </div>
   <div>
     <%= label_tag :description, 'Description: ' %>
@@ -22,12 +22,12 @@
     <%= text_field_tag :price, @sneaker.price %>
   </div>
   <div>
-    <%= label_tag :sneaker_in_stock?, 'In Stock: ' %>
-    <%= text_field_tag :sneaker_in_stock?, @sneaker_in_stock %>
+    <%= label_tag :sneaker_in_stock, 'In Stock: ' %>
+    <%= text_field_tag :sneaker_in_stock, @sneaker.sneaker_in_stock %>
   </div>
   <div>
     <%= label_tag :supplier_id, 'Supplier ID: ' %>
-    <%= text_field_tag :supplier_id, @supplier_id %>
+    <%= collection_select :supplier, :supplier_id, Supplier.all, :id, :name %>
   </div>
   <br>
   <div>
