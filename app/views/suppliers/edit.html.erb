@@ -1,0 +1,21 @@
+<div class="container">
+  <h3>Edit a supplier: </h3>
+  <%= form_tag "/sneakers/#{ @sneaker.id }", method: :patch do %>
+  <div>
+    <%= label_tag :name, 'Supplier: ' %>
+    <%= text_field_tag :name, @supplier.name %>
+  </div>
+  <div>
+    <%= label_tag :email, 'Email: ' %>
+    <%= text_field_tag :email, @supplier.email %>
+  </div>
+  <div>
+    <%= label_tag :phone, 'Phone: ' %>
+    <%= text_field_tag :phone, @supplier.email %>
+  </div>
+  <br>
+  <div>
+    <%= submit_tag "Edit Supplier", class:"btn btn-default" %>
+  </div>
+  <% end %>
+</div>

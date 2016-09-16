@@ -53,7 +53,6 @@ class ProductsController < ApplicationController
     @sneaker = Sneaker.find(params[:id])
     @sneaker.update(make: params[:make],
                     model: params[:model],
-                    image: params[:image],
                     description: params[:description],
                     price: params[:price],
                     sneaker_in_stock: params[:sneaker_in_stock],

@@ -1,6 +1,7 @@
 class Sneaker < ApplicationRecord
   belongs_to :supplier
   has_many :images
+  has_many :orders
   
   # def sale_message
   #   if price.to_f < 1000
@@ -28,6 +29,15 @@ class Sneaker < ApplicationRecord
       message = "In Stock"
     else
       message = "Sold Out"
+    end
+  end
+  
+  def top_image
+    first_image = images.first
+    if first_image
+      images.first.url
+    else
+      "https://upload.wikimedia.org/wikipedia/en/c/c7/Michael_Jordan_crying.jpg"
     end
   end
 end

@@ -14,8 +14,14 @@
   <h3 class="<%= "discount-price" if @sneaker.discounted? %>">Total: <%= number_to_currency(@sneaker.total) %></h3> 
   <p>Description:  <%= @sneaker.description %></p>
   <p><%= @sneaker.in_stock %></p>
-  <p><a class="btn btn-default" href="#cart" role="button">Add To Cart</a></p>
-  <p><a class="btn btn-default" href="/sneakers/<%= @sneaker.id %>/edit" role="button">Edit</a></p>
+  
+
+  <p><a class="btn btn-default" href="/sneakers/<%= @sneaker.id %>/edit" role="button">Edit</a>
   <p><%= link_to 'Delete', "/sneakers/#{@sneaker.id}", method: :delete, class:"btn btn-default" %></p>
+  <%= form_tag '/orders', method: :post do %>
+    <%= text_field_tag :quantity, nil, placeholder: "Quantity" %>
+    <%= hidden_field_tag :sneaker_id, @sneaker.id %>
+    <%= submit_tag 'Buy Now!' %>
+  <% end %>
   <p>Supplied By: <%= @sneaker.supplier.name %></p>
 </div>

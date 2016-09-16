@@ -1,0 +1,22 @@
+<div class="container">
+      <h3>Enter a new sneaker: </h3>
+      <%= form_tag '/suppliers', method: :post do %>
+        <div>
+          <%= label_tag :name, 'Company: ' %>
+          <%= text_field_tag :name, nil %>
+        </div>
+        <div>
+          <%= label_tag :email, 'Email: ' %>
+          <%= text_field_tag :email, nil %>
+        </div>
+        <div>
+          <%= label_tag :phone, 'Phone: ' %>
+          <%= text_field_tag :phone, nil %>
+        </div>
+        <br>
+        <div>
+          <%= submit_tag "Add Supplier", class:"btn btn-default" %>
+        </div>
+      <% end %>
+    </div>
+</div>

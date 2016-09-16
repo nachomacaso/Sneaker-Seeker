@@ -5,7 +5,7 @@ Image.create!([
   {url: "https://www.lacesout.net/wp-content/uploads/2016/03/adidas-nbd-friends-family-only.png", sneaker_id: 4},
   {url: "http://iqbkkd2tcm3u6mnv1c41azk6.wpengine.netdna-cdn.com/files/2016/06/adidas-yeezy-boost-750-glow-in-the-dark-6.jpg", sneaker_id: 5},
   {url: "http://theshoegame.com/wp-content/uploads/2013/11/CONCEPTS-New-Balance-999-Kennedy.jpg", sneaker_id: 6},
-  {url: "http://dtpmhvbsmffsz.cloudfront.net/posts/2015/04/15/552ed2deea99a605d70045c3/m_552ed2deea99a605d70045c5.jpg", sneaker_id: 7},
+  {url: "http://glodealer.com/sites/default/files/styles/lightbox_bigimage/public/sale/6-10/skidki-Sankt-Peterburg-1413624901.jpg?itok=9WQvgvOu", sneaker_id: 7},
   {url: "http://cdn.sneakernews.com/wp-content/uploads/2016/07/pharrell-adidas-nmd-human-race-release-reminder-4.jpg", sneaker_id: 8},
   {url: "https://upload.wikimedia.org/wikipedia/commons/9/98/Nike_SB_Dunk_High_MF_Doom_edited.jpg", sneaker_id: 9},
   {url: "http://ronniefieg.kithnyc.netdna-cdn.com/wp-content/uploads/2012/02/RoseGold3.jpg", sneaker_id: 1},
@@ -20,13 +20,14 @@ Image.create!([
   {url: "http://images.solecollector.com/complex/image/upload/c_fill,q_90,w_800/750-boost-light-grey-gum-01_tmk6pb.jpg", sneaker_id: 5},
   {url: "http://www.hypebeast.com/image/2010/12/concepts-new-balance-999-kennedy-2.jpg", sneaker_id: 6},
   {url: "http://www.newbalancenbshop.com/upimage/description/new-balance-2013762100616.jpg", sneaker_id: 6},
-  {url: "http://cn.hypebeast.com/files/2016/01/nike-air-entertrainer06.jpg", sneaker_id: 7},
-  {url: "http://www.newbalancefiles.com/images/Shoes/Nike%20Air%20Yeezy%20II%20Men%20Shoes%20in%20Red_2.jpg", sneaker_id: 7},
-  {url: "http://iqbkkd2tcm3u6mnv1c41azk6.wpengine.netdna-cdn.com/files/2016/07/Pharrell-x-adidas-NMD-Human-Race--759x405.jpg", sneaker_id: 8},
+  {url: "http://www.newbalancefiles.com/images/Shoes/Nike%20Air%20Yeezy%20II%20Men%20Shoes%20in%20Red_2.jpg", sneaker_id: 7},  
+  {url: "http://theboombox.com/files/2013/12/nike-air-yeezy-2-red-october-footlocker-1.jpg", sneaker_id: 7},
   {url: "http://cdn.sneakernews.com/wp-content/uploads/2016/07/pharrell-adidas-nmd-yellow-black-7t.jpg", sneaker_id: 8},
+  {url: "https://fxshnjunke.files.wordpress.com/2016/07/img_0033-1.jpg?w=414&h=400&crop=1", sneaker_id: 8},
   {url: "http://www.huangi.com/images/r/ppwwopwvo_p.jpg", sneaker_id: 9},
   {url: "http://cdn.sneakernews.com/wp-content/uploads/2009/07/mfdoom2-570x379.jpg", sneaker_id: 9}
 ])
+
 Sneaker.create!([
   {make: "Asics", model: "GT-2", description: "Asics GT-2 \"Rose Gold\"", price: "1100.0", sneaker_in_stock: true, supplier_id: 1},
   {make: "Nike", model: "Air Jordan", description: "Air Jordan I Retro High OG Chicago (White/Black/Varsity Red)", price: "500.0", sneaker_in_stock: true, supplier_id: 2},
@@ -42,4 +43,7 @@ Supplier.create!([
   {name: "Flight Club", email: "flightclub@gmail.com", phone: "(602)555-7839"},
   {name: "Kream", email: "kream@gmail.com", phone: "(312)555-1479"},
   {name: "Foot Locker", email: "supplier@footlocker.com", phone: "(800)555-3478"}
+])
+User.create!([
+  {name: "joe", email: "joe@gmail.com", password_digest: "$2a$10$ArpIu1tnDhqFTm1HrhEjeed/DHDSlhGVCWOhn4vZcoe.2sumzxxSa"}
 ])
