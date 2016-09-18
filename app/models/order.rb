@@ -10,7 +10,7 @@ class Order < ApplicationRecord
     34000 + id
   end
 
-  def calculate_subtotal
+  def calculate_subtotal(sneaker_object)
     self.subtotal = sneaker.price * quantity
   end
 

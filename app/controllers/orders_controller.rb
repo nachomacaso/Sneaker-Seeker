@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
     # @order.tax = @order.subtotal * 0.09
     # @order.total = @order.subtotal + @order.tax
 
-    @order.calculate_subtotal
+    @order.calculate_subtotal(sneaker)
     @order.calculate_tax
     @order.calculate_total
 
