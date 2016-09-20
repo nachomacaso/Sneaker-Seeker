@@ -1,6 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :user
-  belongs_to :sneaker
+  has_many :carted_products
+  
 
   def pretty_create_at
     created_at.strftime("%A, %b %d")

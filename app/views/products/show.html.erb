@@ -6,13 +6,22 @@
   <% else %>
     <h4>On Sale!</h4>
   <% end %>
+
   <% @sneaker.images.each do |image_object| %>
     <img src="<%= image_object.url %>" alt="<%= @sneaker.model %>">
   <% end %>
+
   <h4>Price: <%= number_to_currency(@sneaker.price) %></h4>
   <h4>Tax: <%= number_to_currency(@sneaker.tax) %></h4> 
   <h3 class="<%= "discount-price" if @sneaker.discounted? %>">Total: <%= number_to_currency(@sneaker.total) %></h3> 
   <p>Description:  <%= @sneaker.description %></p>
+
+  <p>Categories:
+    <% @categories.each do |category| %>
+    <a href="/sneakers?category=<%= category.name %>"><%= category.name %></a>
+    <% end %>
+  </p>
+
   <p><%= @sneaker.in_stock %></p>
   
 
@@ -23,5 +32,5 @@
     <%= hidden_field_tag :sneaker_id, @sneaker.id %>
     <%= submit_tag 'Buy Now!' %>
   <% end %>
-  <p>Supplied By: <%= @sneaker.supplier.name %></p>
+  <p>Supplied By: <%= @supplier.name %></p>
 </div>

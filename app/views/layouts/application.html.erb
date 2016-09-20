@@ -54,6 +54,13 @@
             <li><a href="/sneakers?discount=800&sort=price">Discount Items</a></li>
             <li><a href="/sneakers/random">Random Product</a></li>
             <li role="seperator" class="divider"></li>
+
+            <li>CATEGORIES</li>
+            <% @categories_list.each do |category| %>
+              <li><a href="/sneakers?category=<%= category.name %>"><%= category.name.titleize %></a></li>
+            <% end %>
+
+            <li role="seperator" class="divider"></li>
             <% if current_user %>
               <li><%= link_to 'Log Out', '/logout', method: :delete %></a></li>
             <% else %>

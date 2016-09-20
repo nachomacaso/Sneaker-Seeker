@@ -1,3 +1,24 @@
+Category.create!([
+  {name: "Adidas"},
+  {name: "Nike"},
+  {name: "Other Brand"},
+  {name: "Yeezy"},
+  {name: "Jordan"}
+])
+CategorySneaker.create!([
+  {category_id: 3, sneaker_id: 1},
+  {category_id: 2, sneaker_id: 2},
+  {category_id: 5, sneaker_id: 2},
+  {category_id: 2, sneaker_id: 3},
+  {category_id: 1, sneaker_id: 4},
+  {category_id: 1, sneaker_id: 5},
+  {category_id: 4, sneaker_id: 5},
+  {category_id: 3, sneaker_id: 6},
+  {category_id: 4, sneaker_id: 7},
+  {category_id: 2, sneaker_id: 7},
+  {category_id: 1, sneaker_id: 8},
+  {category_id: 2, sneaker_id: 9}
+])
 Image.create!([
   {url: "https://66.media.tumblr.com/d6e7a60a9266cf0239302c2af5b645a5/tumblr_nf8al5DeKN1r92k5yo1_500.jpg", sneaker_id: 1},
   {url: "https://www.eukicks.com/wp-content/uploads/2015/05/Air-Jordan-1-Retro-High-OG-Chicago.jpg", sneaker_id: 2},
@@ -20,14 +41,26 @@ Image.create!([
   {url: "http://images.solecollector.com/complex/image/upload/c_fill,q_90,w_800/750-boost-light-grey-gum-01_tmk6pb.jpg", sneaker_id: 5},
   {url: "http://www.hypebeast.com/image/2010/12/concepts-new-balance-999-kennedy-2.jpg", sneaker_id: 6},
   {url: "http://www.newbalancenbshop.com/upimage/description/new-balance-2013762100616.jpg", sneaker_id: 6},
-  {url: "http://www.newbalancefiles.com/images/Shoes/Nike%20Air%20Yeezy%20II%20Men%20Shoes%20in%20Red_2.jpg", sneaker_id: 7},  
+  {url: "http://www.newbalancefiles.com/images/Shoes/Nike%20Air%20Yeezy%20II%20Men%20Shoes%20in%20Red_2.jpg", sneaker_id: 7},
   {url: "http://theboombox.com/files/2013/12/nike-air-yeezy-2-red-october-footlocker-1.jpg", sneaker_id: 7},
   {url: "http://cdn.sneakernews.com/wp-content/uploads/2016/07/pharrell-adidas-nmd-yellow-black-7t.jpg", sneaker_id: 8},
   {url: "https://fxshnjunke.files.wordpress.com/2016/07/img_0033-1.jpg?w=414&h=400&crop=1", sneaker_id: 8},
   {url: "http://www.huangi.com/images/r/ppwwopwvo_p.jpg", sneaker_id: 9},
   {url: "http://cdn.sneakernews.com/wp-content/uploads/2009/07/mfdoom2-570x379.jpg", sneaker_id: 9}
 ])
-
+Order.create!([
+  {user_id: 1, sneaker_id: 1, quantity: 1, subtotal: "1100.0", tax: nil, total: nil},
+  {user_id: 1, sneaker_id: 1, quantity: 1, subtotal: "1100.0", tax: nil, total: nil},
+  {user_id: 1, sneaker_id: 1, quantity: 1, subtotal: "1100.0", tax: nil, total: nil},
+  {user_id: 1, sneaker_id: 1, quantity: 1, subtotal: nil, tax: nil, total: nil},
+  {user_id: 1, sneaker_id: 1, quantity: 2, subtotal: "2200.0", tax: "198.0", total: "2398.0"},
+  {user_id: 1, sneaker_id: 1, quantity: 3, subtotal: "3300.0", tax: "297.0", total: "3597.0"},
+  {user_id: 1, sneaker_id: 1, quantity: 3, subtotal: "3300.0", tax: "297.0", total: "3597.0"},
+  {user_id: 1, sneaker_id: 1, quantity: 5, subtotal: "5500.0", tax: "495.0", total: "5995.0"},
+  {user_id: 1, sneaker_id: 2, quantity: 15, subtotal: "7500.0", tax: "675.0", total: "8175.0"},
+  {user_id: 1, sneaker_id: 1, quantity: 8, subtotal: "8800.0", tax: "792.0", total: "9592.0"},
+  {user_id: 1, sneaker_id: 3, quantity: 5, subtotal: "150000.0", tax: "13500.0", total: "163500.0"}
+])
 Sneaker.create!([
   {make: "Asics", model: "GT-2", description: "Asics GT-2 \"Rose Gold\"", price: "1100.0", sneaker_in_stock: true, supplier_id: 1},
   {make: "Nike", model: "Air Jordan", description: "Air Jordan I Retro High OG Chicago (White/Black/Varsity Red)", price: "500.0", sneaker_in_stock: true, supplier_id: 2},

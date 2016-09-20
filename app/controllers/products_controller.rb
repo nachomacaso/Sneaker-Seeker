@@ -4,7 +4,15 @@ class ProductsController < ApplicationController
     sort_attribute = params[:sort]   # :price
     sort_order = params[:sort_order] # :price
     discount_level = params[:discount]
-    search_term = params[:search_term]
+    category = params[:category]
+
+    if category
+      # category_object = Category.find_by(name: category)
+      # @sneakers = category_object.sneakers
+      # # same as below
+
+      @sneakers = Category.find_by(name: category).sneakers
+    end
 
     if search_term
       fuzzy_search_term = "%#{search_term}%"
@@ -42,7 +50,8 @@ class ProductsController < ApplicationController
 
   def show
     @sneaker = Sneaker.find(params[:id])
-    # @supplier = @sneakers.supplier.name
+    @categories = @sneaker.categories
+    @supplier = @sneaker.supplier
   end
 
   def edit
