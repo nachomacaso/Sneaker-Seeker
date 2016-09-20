@@ -23,4 +23,8 @@ class ApplicationController < ActionController::Base
   def find_categories_list
     @categories_list = Category.all
   end
+
+  def find_carted_products_list
+    @carted_products_list = CartedProduct.all
+  end
 end

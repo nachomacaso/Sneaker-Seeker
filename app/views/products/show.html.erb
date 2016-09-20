@@ -27,10 +27,10 @@
 
   <p><a class="btn btn-default" href="/sneakers/<%= @sneaker.id %>/edit" role="button">Edit</a>
   <p><%= link_to 'Delete', "/sneakers/#{@sneaker.id}", method: :delete, class:"btn btn-default" %></p>
-  <%= form_tag '/orders', method: :post do %>
+  <%= form_tag '/carted_products', method: :post do %>
     <%= text_field_tag :quantity, nil, placeholder: "Quantity" %>
     <%= hidden_field_tag :sneaker_id, @sneaker.id %>
-    <%= submit_tag 'Buy Now!' %>
+    <%= submit_tag 'Add To Cart' %>
   <% end %>
   <p>Supplied By: <%= @supplier.name %></p>
 </div>

@@ -1,13 +1,25 @@
 <div class="container">
-  <h1><%= current_user.name.titleize %>, Your Order</h1>
-  
-  <h3><%= @product.make %> <%= @product.model %></h3>
-  <h3>Order id: <%= @order.id_present_to_customer %></h3>
-  <h3>Purchased: <%= @order.pretty_create_at %></h3>
-  <h3>Quantity: <%= @order.quantity %></h3>
-  <img src="<%= @product.top_image %>" alt="<%= @product.model %>"> 
-  <h3>Subtotal: <%= number_to_currency(@order.subtotal) %></h3>
-  <h3>Tax: <%= number_to_currency(@order.tax) %></h3>
-  <h3>Total: <%= number_to_currency(@order.total) %></h3>
+  <div class="col-md-12">
+    <h1><%= current_user.name.titleize %>, Your Order</h1>
+    <h3>Order id: <%= @order.id_present_to_customer %></h3>
+    <h3>Purchased: <%= @order.pretty_create_at %></h3>
+    <h3>Subtotal: <%= number_to_currency(@order.subtotal) %></h3>
+    <h3>Tax: <%= number_to_currency(@order.tax) %></h3>
+    <h3>Total: <%= number_to_currency(@order.total) %></h3>
+  </div>
 
+  <% @order_array.sneakers.each do |sneaker| %>
+    <div class="col-md-4">
+      <div class="well thumbnail index-list"> 
+        <h3><%= sneaker.make %> <%= sneaker.model %></h3>
+
+        <% @order_array.carted_products.each do |product| %>
+          <h3>Quantity: <%= product.quantity %></h3>
+          <% break %>
+        <% end %>
+
+        <img src="<%= sneaker.top_image %>" alt="<%= sneaker.model %>"> 
+      </div>
+    </div>
+  <% end %>
 </div>

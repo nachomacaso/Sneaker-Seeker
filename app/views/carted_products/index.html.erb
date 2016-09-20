@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Shopping Cart: </h1>
+  <% @carted_products.each do |carted_product| %>
+    <div class="col-md-4">
+      <div class="well thumbnail index-list">
+        <h2><%= carted_product.sneaker.make %> <%= carted_product.sneaker.model %></h2>
+        <a href="/sneakers/<%= carted_product.sneaker.id %>">
+          <img src="<%= carted_product.sneaker.images.first.url %>" alt="<%= carted_product.sneaker.model %>">
+        </a>
+        <h3>Quantity: <%= carted_product.quantity %></h3>
+        <h3>Description:  <%= carted_product.sneaker.description %></h3>
+        <h4>Price:  <%= number_to_currency(carted_product.sneaker.price) %></h4>
+        <p><a class="btn btn-default" href="/sneakers/<%= carted_product.sneaker.id %>" role="button">View Details &raquo;</a></p>
+      </div>
+    </div>
+  <% end %>
+  <div>
+    <%= form_tag '/orders', method: :post do %>
+      <%= submit_tag 'Buy Now!' %>
+    <% end %>
+  </div>
+</div>

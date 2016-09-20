@@ -1,3 +1,5 @@
+CartedProduct.create!([
+  ])
 Category.create!([
   {name: "Adidas"},
   {name: "Nike"},
@@ -45,21 +47,10 @@ Image.create!([
   {url: "http://theboombox.com/files/2013/12/nike-air-yeezy-2-red-october-footlocker-1.jpg", sneaker_id: 7},
   {url: "http://cdn.sneakernews.com/wp-content/uploads/2016/07/pharrell-adidas-nmd-yellow-black-7t.jpg", sneaker_id: 8},
   {url: "https://fxshnjunke.files.wordpress.com/2016/07/img_0033-1.jpg?w=414&h=400&crop=1", sneaker_id: 8},
-  {url: "http://www.huangi.com/images/r/ppwwopwvo_p.jpg", sneaker_id: 9},
-  {url: "http://cdn.sneakernews.com/wp-content/uploads/2009/07/mfdoom2-570x379.jpg", sneaker_id: 9}
+  {url: "http://cdn.sneakernews.com/wp-content/uploads/2009/07/mfdoom2-570x379.jpg", sneaker_id: 9},
+  {url: "http://img7.doubanio.com/view/note/large/public/p118801870-1.jpg", sneaker_id: 9}
 ])
 Order.create!([
-  {user_id: 1, sneaker_id: 1, quantity: 1, subtotal: "1100.0", tax: nil, total: nil},
-  {user_id: 1, sneaker_id: 1, quantity: 1, subtotal: "1100.0", tax: nil, total: nil},
-  {user_id: 1, sneaker_id: 1, quantity: 1, subtotal: "1100.0", tax: nil, total: nil},
-  {user_id: 1, sneaker_id: 1, quantity: 1, subtotal: nil, tax: nil, total: nil},
-  {user_id: 1, sneaker_id: 1, quantity: 2, subtotal: "2200.0", tax: "198.0", total: "2398.0"},
-  {user_id: 1, sneaker_id: 1, quantity: 3, subtotal: "3300.0", tax: "297.0", total: "3597.0"},
-  {user_id: 1, sneaker_id: 1, quantity: 3, subtotal: "3300.0", tax: "297.0", total: "3597.0"},
-  {user_id: 1, sneaker_id: 1, quantity: 5, subtotal: "5500.0", tax: "495.0", total: "5995.0"},
-  {user_id: 1, sneaker_id: 2, quantity: 15, subtotal: "7500.0", tax: "675.0", total: "8175.0"},
-  {user_id: 1, sneaker_id: 1, quantity: 8, subtotal: "8800.0", tax: "792.0", total: "9592.0"},
-  {user_id: 1, sneaker_id: 3, quantity: 5, subtotal: "150000.0", tax: "13500.0", total: "163500.0"}
 ])
 Sneaker.create!([
   {make: "Asics", model: "GT-2", description: "Asics GT-2 \"Rose Gold\"", price: "1100.0", sneaker_in_stock: true, supplier_id: 1},

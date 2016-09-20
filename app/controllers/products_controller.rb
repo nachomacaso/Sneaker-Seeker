@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
     sort_attribute = params[:sort]   # :price
     sort_order = params[:sort_order] # :price
     discount_level = params[:discount]
+    search_term = params[:search_term]
     category = params[:category]
 
     if category
