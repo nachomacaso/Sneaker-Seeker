@@ -8,15 +8,12 @@
           <img src="<%= carted_product.sneaker.images.first.url %>" alt="<%= carted_product.sneaker.model %>">
         </a>
         <h3>Quantity: <%= carted_product.quantity %></h3>
-        <h3>Description:  <%= carted_product.sneaker.description %></h3>
         <h4>Price:  <%= number_to_currency(carted_product.sneaker.price) %></h4>
-        <p><a class="btn btn-default" href="/sneakers/<%= carted_product.sneaker.id %>" role="button">View Details &raquo;</a></p>
+        <%= link_to 'Remove', "/carted_products/#{carted_product.id}", method: :delete %>
       </div>
     </div>
   <% end %>
-  <div>
-    <%= form_tag '/orders', method: :post do %>
-      <%= submit_tag 'Buy Now!' %>
-    <% end %>
-  </div>
+  <%= form_tag '/orders', method: :post do %>
+    <%= submit_tag 'Buy Now!', class: 'btn btn-default' %>
+  <% end %>
 </div>

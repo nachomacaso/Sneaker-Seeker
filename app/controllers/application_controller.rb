@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :find_categories_list
+  before_action :calculate_cart_count
 
   def current_user
     # if session[:user_id]
@@ -16,6 +17,8 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  private
+
   def authenticate_user!
     redirect_to '/login' unless current_user
   end
@@ -26,5 +29,13 @@ class ApplicationController < ActionController::Base
 
   def find_carted_products_list
     @carted_products_list = CartedProduct.all
+  end
+
+  def calculate_cart_count
+    if current_user
+      @cart_count = current_user.currently_carted.count
+    else
+      @cart_count = 0
+    end
   end
 end

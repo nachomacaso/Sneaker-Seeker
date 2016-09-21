@@ -1,5 +1,7 @@
 CartedProduct.create!([
-  ])
+  {user_id: 1, sneaker_id: 2, quantity: 1, status: "purchased", order_id: 1},
+  {user_id: 1, sneaker_id: 5, quantity: 1, status: "purchased", order_id: 1}
+])
 Category.create!([
   {name: "Adidas"},
   {name: "Nike"},
@@ -51,6 +53,7 @@ Image.create!([
   {url: "http://img7.doubanio.com/view/note/large/public/p118801870-1.jpg", sneaker_id: 9}
 ])
 Order.create!([
+  {user_id: 1, subtotal: "1700.0", tax: "153.0", total: "1853.0"}
 ])
 Sneaker.create!([
   {make: "Asics", model: "GT-2", description: "Asics GT-2 \"Rose Gold\"", price: "1100.0", sneaker_in_stock: true, supplier_id: 1},

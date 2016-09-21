@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @sneakers = Sneaker.all
+    @sneakers = Sneaker.all.includes(:images)
     sort_attribute = params[:sort]   # :price
     sort_order = params[:sort_order] # :price
     discount_level = params[:discount]

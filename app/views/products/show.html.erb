@@ -30,7 +30,8 @@
   <%= form_tag '/carted_products', method: :post do %>
     <%= text_field_tag :quantity, nil, placeholder: "Quantity" %>
     <%= hidden_field_tag :sneaker_id, @sneaker.id %>
-    <%= submit_tag 'Add To Cart' %>
+    <br>
+    <%= submit_tag 'Add To Cart', class:"btn btn-default" %>
   <% end %>
   <p>Supplied By: <%= @supplier.name %></p>
 </div>
