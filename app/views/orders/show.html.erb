@@ -1,7 +1,7 @@
 <div class="container">
   <div class="col-md-6">
     <div class ="well thumbnail order-list">
-      <h1><%= current_user.name.titleize %>, Here's Your Order</h1>
+      <h1><%= @order.user.name.titleize %>, Here's Your Order</h1>
       
       <h3>Order id: <%= @order.id_present_to_customer %></h3>
       <h3>Purchased: <%= @order.pretty_create_at %></h3>

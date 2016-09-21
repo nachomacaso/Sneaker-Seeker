@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_admin!, except: [:index, :show, :random]
+
   def index
     @sneakers = Sneaker.all.includes(:images)
     sort_attribute = params[:sort]   # :price

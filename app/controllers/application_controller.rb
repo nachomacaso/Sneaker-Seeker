@@ -19,6 +19,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def authenticate_admin!
+    redirect_to '/login' unless current_user && current_user.admin
+  end
+
   def authenticate_user!
     redirect_to '/login' unless current_user
   end

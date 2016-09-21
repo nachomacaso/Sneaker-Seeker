@@ -1,4 +1,6 @@
 class CartedProductsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     if current_user && current_user.currently_carted.any?
       @carted_products = current_user.currently_carted
