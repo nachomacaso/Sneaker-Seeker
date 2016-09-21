@@ -1,19 +1,28 @@
 <div class="container">
-  <h1>Shopping Cart: </h1>
-  <% @carted_products.each do |carted_product| %>
-    <div class="col-md-4">
-      <div class="well thumbnail index-list">
-        <h2><%= carted_product.sneaker.make %> <%= carted_product.sneaker.model %></h2>
-        <a href="/sneakers/<%= carted_product.sneaker.id %>">
-          <img src="<%= carted_product.sneaker.images.first.url %>" alt="<%= carted_product.sneaker.model %>">
-        </a>
-        <h3>Quantity: <%= carted_product.quantity %></h3>
-        <h4>Price:  <%= number_to_currency(carted_product.sneaker.price) %></h4>
-        <%= link_to 'Remove', "/carted_products/#{carted_product.id}", method: :delete %>
-      </div>
+  <div class="row">
+    <div class="col-md-8">
+      <h1>Shopping Cart: </h1>
+
+      <%= form_tag '/orders', method: :post do %>
+        <%= submit_tag 'Buy Now!', class: 'btn btn-default' %>
+      <% end %>
+      <br>
+
     </div>
-  <% end %>
-  <%= form_tag '/orders', method: :post do %>
-    <%= submit_tag 'Buy Now!', class: 'btn btn-default' %>
-  <% end %>
+  </div>
+  <div class="row">
+    <% @carted_products.each do |carted_product| %>
+      <div class="col-md-4">
+        <div class="well thumbnail cart-list">
+          <h2><%= carted_product.sneaker.make %> <%= carted_product.sneaker.model %></h2>
+          <a href="/sneakers/<%= carted_product.sneaker.id %>">
+            <img src="<%= carted_product.sneaker.images.first.url %>" alt="<%= carted_product.sneaker.model %>">
+          </a>
+          <h3>Quantity: <%= carted_product.quantity %></h3>
+          <h4>Price:  <%= number_to_currency(carted_product.sneaker.price) %></h4>
+          <%= link_to 'Remove', "/carted_products/#{carted_product.id}", method: :delete %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
