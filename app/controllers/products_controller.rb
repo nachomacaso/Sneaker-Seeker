@@ -35,20 +35,28 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @sneaker = Sneaker.new
   end
 
   def create
-    @sneaker = Sneaker.create(make: params[:make],
-                              model: params[:model],
-                              description: params[:description],
-                              price: params[:price],
-                              sneaker_in_stock: params[:sneaker_in_stock], 
-                              supplier_id: params[:supplier][:supplier_id])
+    @sneaker = Sneaker.new(make: params[:make],
+                           model: params[:model],
+                           description: params[:description],
+                           price: params[:price],
+                           sneaker_in_stock: params[:sneaker_in_stock], 
+                           supplier_id: params[:supplier][:supplier_id])
 
-    Image.create(url: params[:image], sneaker_id: @sneaker.id) if params[:image]
+    if @sneaker.save
+      Image.create(url: params[:image], sneaker_id: @sneaker.id) if params[:image]
+      Image.create(url: params[:image_2], sneaker_id: @sneaker.id) if params[:image_2]
+      Image.create(url: params[:image_3], sneaker_id: @sneaker.id) if params[:image_3]
 
-    flash[:success] = "New Item Sucessfully Created"
-    redirect_to "/sneakers/#{@sneaker.id}"
+      flash[:success] = "New Item Sucessfully Created"
+      redirect_to "/sneakers/#{@sneaker.id}"
+    else
+      flash[:danger] = "Item Not Created"
+      render 'new.html.erb'
+    end
   end
 
   def show
