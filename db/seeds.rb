@@ -1,7 +1,3 @@
-CartedProduct.create!([
-  {user_id: 1, sneaker_id: 2, quantity: 1, status: "purchased", order_id: 1},
-  {user_id: 1, sneaker_id: 5, quantity: 1, status: "purchased", order_id: 1}
-])
 Category.create!([
   {name: "Adidas"},
   {name: "Nike"},
@@ -52,9 +48,6 @@ Image.create!([
   {url: "http://cdn.sneakernews.com/wp-content/uploads/2009/07/mfdoom2-570x379.jpg", sneaker_id: 9},
   {url: "http://img7.doubanio.com/view/note/large/public/p118801870-1.jpg", sneaker_id: 9}
 ])
-Order.create!([
-  {user_id: 1, subtotal: "1700.0", tax: "153.0", total: "1853.0"}
-])
 Sneaker.create!([
   {make: "Asics", model: "GT-2", description: "Asics GT-2 \"Rose Gold\"", price: "1100.0", sneaker_in_stock: true, supplier_id: 1},
   {make: "Nike", model: "Air Jordan", description: "Air Jordan I Retro High OG Chicago (White/Black/Varsity Red)", price: "500.0", sneaker_in_stock: true, supplier_id: 2},
@@ -70,7 +63,4 @@ Supplier.create!([
   {name: "Flight Club", email: "flightclub@gmail.com", phone: "(602)555-7839"},
   {name: "Kream", email: "kream@gmail.com", phone: "(312)555-1479"},
   {name: "Foot Locker", email: "supplier@footlocker.com", phone: "(800)555-3478"}
-])
-User.create!([
-  {name: "joe", email: "joe@gmail.com", password_digest: "$2a$10$ArpIu1tnDhqFTm1HrhEjeed/DHDSlhGVCWOhn4vZcoe.2sumzxxSa"}
 ])
