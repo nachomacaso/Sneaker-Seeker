@@ -41,4 +41,6 @@ Rails.application.routes.draw do
 
   post '/orders' => 'orders#create'
   get '/orders/:id' => 'orders#show'
+
+  get '/secret' => 'easter_eggs#show'
 end
