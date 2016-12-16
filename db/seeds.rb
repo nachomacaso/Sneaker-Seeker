@@ -1,25 +1,13 @@
+CartedProduct.create!([
+  {user_id: 1, sneaker_id: 3, quantity: 1, status: "purchased", order_id: 1},
+  {user_id: 1, sneaker_id: 2, quantity: 1, status: "purchased", order_id: 2}
+])
 Category.create!([
   {name: "Adidas"},
   {name: "Nike"},
   {name: "Other Brand"},
   {name: "Yeezy"},
   {name: "Jordan"}
-])
-Supplier.create!([
-  {name: "Flight Club", email: "flightclub@gmail.com", phone: "(602)555-7839"},
-  {name: "Kream", email: "kream@gmail.com", phone: "(312)555-1479"},
-  {name: "Foot Locker", email: "supplier@footlocker.com", phone: "(800)555-3478"}
-])
-Sneaker.create!([
-  {make: "Asics", model: "GT-2", description: "Asics GT-2 \"Rose Gold\"", price: "1100.0", sneaker_in_stock: true, supplier_id: 1},
-  {make: "Nike", model: "Air Jordan", description: "Air Jordan I Retro High OG Chicago (White/Black/Varsity Red)", price: "500.0", sneaker_in_stock: true, supplier_id: 2},
-  {make: "Nike", model: "Air Mag", description: "Nike Air Mag 'Back to the Future'", price: "30000.0", sneaker_in_stock: true, supplier_id: 3},
-  {make: "adidas", model: "NMD Primeknit", description: "adidas Originals NMD Primeknit 'Friends and Family'", price: "800.0", sneaker_in_stock: true, supplier_id: 1},
-  {make: "adidas", model: "yeezy boost 750", description: "adidas yeezy boost 750 Gray/Gum", price: "1200.0", sneaker_in_stock: true, supplier_id: 2},
-  {make: "New Balance", model: "ML999", description: "New Balance ML999 \"The Kennedy\"", price: "1000.0", sneaker_in_stock: true, supplier_id: 3},
-  {make: "Nike ", model: "Air Yeezy 2", description: "Nike Air Yeezy 2 \"Red October\"", price: "6000.0", sneaker_in_stock: true, supplier_id: 1},
-  {make: "adidas", model: "NMD", description: "Pharrell X adidas NMD \"Human Race\" ", price: "600.0", sneaker_in_stock: true, supplier_id: 2},
-  {make: "Nike", model: "Dunk Hi", description: "DUNK HIGH SB PREMIUM \"MF DOOM\"", price: "400.0", sneaker_in_stock: true, supplier_id: 3}
 ])
 CategorySneaker.create!([
   {category_id: 3, sneaker_id: 1},
@@ -43,7 +31,7 @@ Image.create!([
   {url: "http://iqbkkd2tcm3u6mnv1c41azk6.wpengine.netdna-cdn.com/files/2016/06/adidas-yeezy-boost-750-glow-in-the-dark-6.jpg", sneaker_id: 5},
   {url: "http://theshoegame.com/wp-content/uploads/2013/11/CONCEPTS-New-Balance-999-Kennedy.jpg", sneaker_id: 6},
   {url: "http://glodealer.com/sites/default/files/styles/lightbox_bigimage/public/sale/6-10/skidki-Sankt-Peterburg-1413624901.jpg?itok=9WQvgvOu", sneaker_id: 7},
-  {url: "http://cdn.sneakernews.com/wp-content/uploads/2016/07/pharrell-adidas-nmd-human-race-release-reminder-4.jpg", sneaker_id: 8},
+  {url: "http://static.highsnobiety.com/wp-content/uploads/2016/09/29001844/bape-adidas-nmd-r1-details-00.jpg", sneaker_id: 8},
   {url: "https://upload.wikimedia.org/wikipedia/commons/9/98/Nike_SB_Dunk_High_MF_Doom_edited.jpg", sneaker_id: 9},
   {url: "http://ronniefieg.kithnyc.netdna-cdn.com/wp-content/uploads/2012/02/RoseGold3.jpg", sneaker_id: 1},
   {url: "https://images.sneakersaddict.com/tb/660/397/images/NEW_RoseGold1RF.jpeg", sneaker_id: 1},
@@ -59,8 +47,31 @@ Image.create!([
   {url: "http://www.newbalancenbshop.com/upimage/description/new-balance-2013762100616.jpg", sneaker_id: 6},
   {url: "http://www.newbalancefiles.com/images/Shoes/Nike%20Air%20Yeezy%20II%20Men%20Shoes%20in%20Red_2.jpg", sneaker_id: 7},
   {url: "http://theboombox.com/files/2013/12/nike-air-yeezy-2-red-october-footlocker-1.jpg", sneaker_id: 7},
-  {url: "http://cdn.sneakernews.com/wp-content/uploads/2016/07/pharrell-adidas-nmd-yellow-black-7t.jpg", sneaker_id: 8},
-  {url: "https://fxshnjunke.files.wordpress.com/2016/07/img_0033-1.jpg?w=414&h=400&crop=1", sneaker_id: 8},
+  {url: "http://thesolesupplier.co.uk/wp-content/uploads/2016/10/NMD-camo-Above-shot-bape.png", sneaker_id: 8},
+  {url: "http://6.kicksonfire.net/wp-content/uploads/2016/09/BAPE-x-adidas-NMD-5-565x372.jpg?9a1c09", sneaker_id: 8},
   {url: "http://cdn.sneakernews.com/wp-content/uploads/2009/07/mfdoom2-570x379.jpg", sneaker_id: 9},
   {url: "http://img7.doubanio.com/view/note/large/public/p118801870-1.jpg", sneaker_id: 9}
+])
+Order.create!([
+  {user_id: 1, subtotal: "30000.0", tax: "2700.0", total: "32700.0"},
+  {user_id: 1, subtotal: "500.0", tax: "45.0", total: "545.0"}
+])
+Sneaker.create!([
+  {make: "Asics", model: "GT-2", description: "Asics GT-2 \"Rose Gold\"", price: "1100.0", sneaker_in_stock: true, supplier_id: 1},
+  {make: "Nike", model: "Air Jordan", description: "Air Jordan I Retro High OG Chicago (White/Black/Varsity Red)", price: "500.0", sneaker_in_stock: true, supplier_id: 2},
+  {make: "Nike", model: "Air Mag", description: "Nike Air Mag 'Back to the Future'", price: "30000.0", sneaker_in_stock: true, supplier_id: 3},
+  {make: "adidas", model: "NMD Primeknit", description: "adidas Originals NMD Primeknit 'Friends and Family'", price: "800.0", sneaker_in_stock: true, supplier_id: 1},
+  {make: "adidas", model: "yeezy boost 750", description: "adidas yeezy boost 750 Gray/Gum", price: "1200.0", sneaker_in_stock: true, supplier_id: 2},
+  {make: "New Balance", model: "ML999", description: "New Balance ML999 \"The Kennedy\"", price: "1000.0", sneaker_in_stock: true, supplier_id: 3},
+  {make: "Nike ", model: "Air Yeezy 2", description: "Nike Air Yeezy 2 \"Red October\"", price: "6000.0", sneaker_in_stock: true, supplier_id: 1},
+  {make: "adidas", model: "NMD", description: "Bape X adidas NMD \"Green Camo\" ", price: "600.0", sneaker_in_stock: true, supplier_id: 2},
+  {make: "Nike", model: "Dunk Hi", description: "DUNK HIGH SB PREMIUM \"MF DOOM\"", price: "400.0", sneaker_in_stock: true, supplier_id: 3}
+])
+Supplier.create!([
+  {name: "Flight Club", email: "flightclub@gmail.com", phone: "(602)555-7839"},
+  {name: "Kream", email: "kream@gmail.com", phone: "(312)555-1479"},
+  {name: "Foot Locker", email: "supplier@footlocker.com", phone: "(800)555-3478"}
+])
+User.create!([
+  {name: "nate", email: "nate@gmail.com", password_digest: "$2a$10$VBR4xDq1.rclJTXJ8ryWuOCEIpiKBci0dwU93DRMQLLacIDKnxxVK", admin: true}
 ])
